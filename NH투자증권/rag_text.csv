@@ -1,0 +1,68 @@
+ETF,ETF개별구성종목티커,외화증권영문명,외화증권한글명,보유종목타입,배당주기
+AAPB,USD,US Dollars,프로셰어즈 울트라 반도체,EF,Monthly
+GPIQ,USD,USD U.S. DOLLAR,프로셰어즈 울트라 반도체,EF,Monthly
+GPIQ,QQQM,Invesco Nasdaq 100 ETF,인베스코 나스닥100,EF,Monthly
+IEMG,SCC,SEMIRARA MINING AND POWER,프로셰어즈 울트라숏 컨슈머 서비스,EF,SemiAnnual
+IEMG,DNL,D&L INDUSTRIES INC,위즈덤트리 전세계 미국제외 배당 성장,EF,SemiAnnual
+IEMG,AIA,ATHENS INTERNATIONAL AIRPORT SA,아이셰어즈 아시아 50,EF,SemiAnnual
+IEMG,FLOT,SOVKOMFLOT,아이셰어즈 변동금리 채권,EF,SemiAnnual
+IEMG,UPRO,YUNIPRO,프로셰어즈 울트라프로 S&P500,EF,SemiAnnual
+KLIP,KWEB,KraneShares CSI China Internet ETF,크레인쉐어즈 CSI 중국 인터넷,EF,Monthly
+KLIP,KWEB,KraneShares CSI China Internet ETF,크레인쉐어즈 CSI 중국 인터넷,EF,Other
+KORU,EWY,ISHARES MSCI SOUTH KOREA ETF,아이셰어즈 MSCI 한국,EF,Quarterly
+SCHD,USD,US DOLLAR,프로셰어즈 울트라 반도체,EF,Quarterly
+TNA,IWM,ISHARES RUSSELL 2000 ETF,아이셰어즈 러셀 2000,EF,Quarterly
+TNA,IWM,ISHARES RUSSELL 2000 ETF,아이셰어즈 러셀 2000,EF,Other
+YMAX,TSLY,TIDAL ETF TR II TSLA OPTION INCM,일드맥스 테슬라 옵션 인컴 스트래티지,EF,Monthly
+YMAX,FBY,TIDAL ETF TR II YIELDMAX META,일드맥스 메타 옵션 인컴 전략,EF,Monthly
+YMAX,AMZY,TIDAL ETF TR II YIELDMAX AMZN OP,일드맥스 아마존 옵션 인컴 스트래티지,EF,Monthly
+YMAX,NFLY,TIDAL ETF TR II YIELDMAX NFLX,일드맥스 넷플릭스 옵션 인컴 전략,EF,Monthly
+YMAX,AIYY,TIDAL TR II YIELDMAX AI OPT,일드맥스 AI 옵션 인컴 전략,EF,Monthly
+YMAX,DISO,TIDAL ETF TR II YIELDMAX DIS OPT,일드맥스 디즈니 옵션 인컴 전략,EF,Monthly
+YMAX,NVDY,TIDAL ETF TR II YIELDMAX NVDA,일드맥스 엔비디아 옵션 인컴 스트래티지,EF,Monthly
+YMAX,JPMO,TIDAL ETF TR II YIELDMAX JPM OPT,일드맥스 제피이모간 옵션 인컴 전략,EF,Monthly
+YMAX,OARK,TIDAL ETF TR II YIELDMAX INNOVAT,일드맥스 이노베이션 옵션 인컴 전략,EF,Monthly
+YMAX,CONY,TIDAL ETF TR II YIELDMAX COIN OP,일드맥스 코인베이스 옵션 인컴 전략,EF,Monthly
+YMAX,SQY,TIDAL ETF TR II YIELDMAX SQ OPT,일드맥스 SQ 옵션 인컴 전략,EF,Monthly
+YMAX,XOMO,TIDAL ETF TR II YIELDMAX XOM OPT,일드맥스 엑슨모빌 옵션 인컴 전략,EF,Monthly
+YMAX,AMDY,TIDAL ETF TR II YIELDMAX AMD OPT,일드맥스 AMD 옵션 인컴 전략,EF,Monthly
+YMAX,MSFO,TIDAL ETF TR II YIELDMAX MSFT OP,일드맥스 마이크로소프트 옵션 인컴 전략,EF,Monthly
+YMAX,APLY,TIDAL ETF TR II YIELDMAX AAPL,일드맥스 애플 옵션 인컴 스트래티지,EF,Monthly
+YMAX,PYPY,TIDAL ETF TR II YIELDMAX PYPL OP,일드맥스 페이팔 옵션 인컴 전략,EF,Monthly
+YMAX,GOOY,TIDAL ETF TR II YIELDMAX GOOGL,일드맥스 구글 옵션 인컴 전략,EF,Monthly
+CWEB,KWEB,KRANESHARES CSI CHINA INTERN,크레인쉐어즈 CSI 중국 인터넷,EF,Quarterly
+FBL,USD,US Dollars,프로셰어즈 울트라 반도체,EF,Monthly
+TLTW,TLT,ISHARES 20+ YEAR TREASURY BOND ETF,아이셰어즈 20년 국채,EF,Monthly
+VT,SCC,Semirara Mining & Power Corp.,프로셰어즈 울트라숏 컨슈머 서비스,EF,Quarterly
+VT,FAB,First Abu Dhabi Bank PJSC,퍼스트트러스트 멀티 캡 밸류 알파덱스,EF,Quarterly
+VWO,SCC,Semirara Mining & Power Corp.,프로셰어즈 울트라숏 컨슈머 서비스,EF,Quarterly
+VWO,FAB,First Abu Dhabi Bank PJSC,퍼스트트러스트 멀티 캡 밸류 알파덱스,EF,Quarterly
+YINN,FXI,ISHARES CHINA LARGE-CAP ETF,아이셰어즈 중국 대형주,EF,Quarterly
+KRBN,KCSH,KraneShares Sustainable Ultra Short Duration Index ETF?,크레인셰어즈 지속가능 초단기 듀레이션 인덱스,EF,SemiAnnual
+KRBN,KCSH,KraneShares Sustainable Ultra Short Duration Index ETF?,크레인셰어즈 지속가능 초단기 듀레이션 인덱스,EF,Annual
+CONL,USD,US Dollars,프로셰어즈 울트라 반도체,EF,Monthly
+DIVO,SOF,Amplify Samsung Sofr Etf,앰플리파이 삼성 SOFR,EF,Monthly
+NVDL,USD,US Dollars,프로셰어즈 울트라 반도체,EF,Monthly
+SVOL,MTBA,SIMPLIFY EXCHANGE TRADED FDS,심플러파이 MBS,EF,Monthly
+SVOL,BUCK,SIMPLIFY E STABLE INCOME ETF,심플리파이 스테이블 인컴,EF,Monthly
+SVOL,CDX,SIMPLIFY E HIGH YIELD PLUS CREDIT H,심플리파이 고수익고위험 플러스 크레딧 헤지,EF,Monthly
+SVOL,HIGH,SIMPLIFY E ENHANCED INCOME ETF,심플리파이 인핸스드 인컴,EF,Monthly
+SVOL,AGGH,SIMPLIFY E AGGREGATE BOND ETF,심플리파이 총채권 플러스 신용 헤지,EF,Monthly
+AOR,IDEV,ISHARES CORE MSCI INT DEVEL ETF,아이셰어즈 코어 MSCI 선진국,EF,Quarterly
+AOR,IUSB,ISHARES CORE TOTAL USD BOND MARKET,아이셰어즈 코어 미국달러 채권,EF,Quarterly
+AOR,IVV,ISHARES CORE S&P 500 ETF,아이셰어즈 S&P500,EF,Quarterly
+AOR,IJR,ISHARES CORE S&P SMALL-CAP ETF,아이셰어즈 코어 S&P 소형주,EF,Quarterly
+AOR,IJH,ISHARES CORE S&P MID-CAP ETF,아이셰어즈 코어 S&P 중형주,EF,Quarterly
+AOR,IAGG,iShares Core Intl Aggregate Bnd ET,아이셰어즈 코어 전세계 전체 채권,EF,Quarterly
+AOR,IEMG,ISHARES CORE MSCI EMERGING MARKETS,아이셰어즈 코어 MSCI 신흥시장,EF,Quarterly
+RPAR,VEA,VANGUARD FTSE DEVELOPED ETF,뱅가드 FTSE 선진국,EF,Quarterly
+RPAR,VWO,Vanguard FTSE Emerging Markets ETF,뱅가드 FTSE 신흥시장,EF,Quarterly
+RPAR,GLDM,SPDR Gold MiniShares Trust,스파이더 골드 미니셰어즈,EF,Quarterly
+RPAR,VTI,Vanguard Total Stock Market ETF,뱅가드 미국 토탈마켓,EF,Quarterly
+GPIX,VOO,Vanguard S&P 500 ETF,뱅가드 S&P500,EF,Monthly
+GPIX,IVV,iShares Core S&P 500 ETF,아이셰어즈 S&P500,EF,Monthly
+GPIX,USD,USD U.S. DOLLAR,프로셰어즈 울트라 반도체,EF,Monthly
+TSL,USD,US Dollars,프로셰어즈 울트라 반도체,EF,Monthly
+NVD,USD,US Dollars,프로셰어즈 울트라 반도체,EF,Monthly
+RYLD,RSSL,GLOBAL X RUSSELL 2000 ETF,루셀 2000,EF,Monthly
+TMF,TLT,ISHARES 20+ YEAR TREASURY BD,아이셰어즈 20년 국채,EF,Quarterly
