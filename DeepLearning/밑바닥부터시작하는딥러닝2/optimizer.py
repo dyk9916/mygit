@@ -14,7 +14,7 @@ class SGD:
         
     def update(self, params, grads):
         for i in range(len(params)):
-            params[i] -= self.lr * grads[i]
+            params[i] -= self.lr * grads[i] # 오차역전파를 통해 구한 기울기를 이용해 가중치 갱신, 갱신한 가중치를 다시 params에 저장
 
 
 class Momentum:
