@@ -1,7 +1,7 @@
 # coding: utf-8
-from common.np import *  # import numpy as np (or import cupy as np)
-from common.layers import *
-from common.functions import sigmoid
+import numpy as np
+from layers import *
+from functions import sigmoid
 
 
 class RNN:
