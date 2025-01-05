@@ -2,7 +2,7 @@
 import sys
 sys.path.append('..')
 import os
-import numpy
+import numpy as np
 
 
 id_to_char = {}
@@ -40,8 +40,8 @@ def load_data(file_name='addition.txt', seed=1984):
         _update_vocab(a)
 
     # 넘파이 배열 생성
-    x = numpy.zeros((len(questions), len(questions[0])), dtype=numpy.int)
-    t = numpy.zeros((len(questions), len(answers[0])), dtype=numpy.int)
+    x = np.zeros((len(questions), len(questions[0])), dtype=int)
+    t = np.zeros((len(questions), len(answers[0])), dtype=int)
 
     for i, sentence in enumerate(questions):
         x[i] = [char_to_id[c] for c in list(sentence)]
@@ -49,10 +49,10 @@ def load_data(file_name='addition.txt', seed=1984):
         t[i] = [char_to_id[c] for c in list(sentence)]
 
     # 뒤섞기
-    indices = numpy.arange(len(x))
+    indices = np.arange(len(x))
     if seed is not None:
-        numpy.random.seed(seed)
-    numpy.random.shuffle(indices)
+        np.random.seed(seed)
+    np.random.shuffle(indices)
     x = x[indices]
     t = t[indices]
 
