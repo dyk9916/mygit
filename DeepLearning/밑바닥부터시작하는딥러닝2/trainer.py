@@ -42,7 +42,7 @@ class Trainer:
                 params, grads = remove_duplicate(model.params, model.grads)  # 공유된 가중치를 하나로 모음
                 if max_grad is not None:
                     clip_grads(grads, max_grad)
-                optimizer.update(params, grads) # 기울기를 활용해 가중치 갱신
+                optimizer.update(params, grads) # 기울기(grads)를 활용해 가중치(params) 갱신
                 total_loss += loss
                 loss_count += 1
 

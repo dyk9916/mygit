@@ -97,8 +97,8 @@ class Seq2seq(BaseModel):
         self.decoder = Decoder(V, D, H)
         self.softmax = TimeSoftmaxWithLoss()
 
-        self.params = self.encoder.params + self.decoder.params
-        self.grads = self.encoder.grads + self.decoder.grads
+        self.params = self.encoder.params + self.decoder.params # 인코더와 디코더의 params를 다 합침
+        self.grads = self.encoder.grads + self.decoder.grads    # 인코더와 디코더의 grads를 다 합침
 
     def forward(self, xs, ts): # xs: 입력 데이터, ts: 정답 레이블
         decoder_xs, decoder_ts = ts[:, :-1], ts[:, 1:] # 정답 레이블에서 첫 번째 문자를 제외한 것이 디코더의 입력, 정답 레이블에서 마지막 문자를 제외한 것이 디코더의 정답 레이블
