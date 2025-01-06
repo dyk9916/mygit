@@ -233,10 +233,10 @@ class TimeEmbedding:
         self.W = W
 
     def forward(self, xs):
-        N, T = xs.shape
-        V, D = self.W.shape
+        N, T = xs.shape # N은 미니배치 크기, T는 시계열 데이터의 길이, 하나의 데이터 당 T개의 단어가 들어있음
+        V, D = self.W.shape # V는 어휘 수, D는 단어 벡터의 차원 수 
 
-        out = np.empty((N, T, D), dtype='f')
+        out = np.empty((N, T, D), dtype='f') # 출력 데이터 저장용 배열
         self.layers = []
 
         for t in range(T):

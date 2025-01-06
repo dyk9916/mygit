@@ -10,7 +10,7 @@ class Encoder:
         V, D, H = vocab_size, wordvec_size, hidden_size
         rn = np.random.randn
 
-        embed_W = (rn(V, D) / 100).astype('f')
+        embed_W = (rn(V, D) / 100).astype('f') # embed_W: 입력 데이터의 단어 ID를 단어의 분산 표현으로 변환하는 가중치
         lstm_Wx = (rn(D, 4 * H) / np.sqrt(D)).astype('f')
         lstm_Wh = (rn(H, 4 * H) / np.sqrt(H)).astype('f')
         lstm_b = np.zeros(4 * H).astype('f')
@@ -100,12 +100,12 @@ class Seq2seq(BaseModel):
         self.params = self.encoder.params + self.decoder.params
         self.grads = self.encoder.grads + self.decoder.grads
 
-    def forward(self, xs, ts):
-        decoder_xs, decoder_ts = ts[:, :-1], ts[:, 1:]
+    def forward(self, xs, ts): # xs: 입력 데이터, ts: 정답 레이블
+        decoder_xs, decoder_ts = ts[:, :-1], ts[:, 1:] # 정답 레이블에서 첫 번째 문자를 제외한 것이 디코더의 입력, 정답 레이블에서 마지막 문자를 제외한 것이 디코더의 정답 레이블
 
         h = self.encoder.forward(xs)
-        score = self.decoder.forward(decoder_xs, h)
-        loss = self.softmax.forward(score, decoder_ts)
+        score = self.decoder.forward(decoder_xs, h) # 인코더의 은닉 상태 h와 디코더의 입력 데이터를 사용해 점수를 출력
+        loss = self.softmax.forward(score, decoder_ts) # 점수와 디코더의 정답 레이블을 사용해 손실을 계산
         return loss
 
     def backward(self, dout=1):

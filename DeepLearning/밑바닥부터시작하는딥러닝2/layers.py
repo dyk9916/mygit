@@ -150,8 +150,8 @@ class Dropout:
 
 class Embedding:
     def __init__(self, W):
-        self.params = [W]
-        self.grads = [np.zeros_like(W)]
+        self.params = [W] # 가중치 W를 인스턴스 변수 params에 리스트로 저장
+        self.grads = [np.zeros_like(W)] # W와 형상이 같은 행렬을 하나 준비, 0으로 초기화
         self.idx = None
 
     def forward(self, idx):
