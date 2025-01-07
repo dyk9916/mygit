@@ -1,11 +1,11 @@
 # coding: utf-8
 import sys
-sys.path.append('..')
+sys.path.append('C:/Users/KimDongyoung/Desktop/Github/my_git/mygit/DEEPLEARNING/밑바닥부터시작하는딥러닝2')
 import numpy
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-from util import clip_grads
+from common.util import clip_grads
 
 
 class Trainer:
