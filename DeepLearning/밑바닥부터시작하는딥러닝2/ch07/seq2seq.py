@@ -1,8 +1,8 @@
 # coding: utf-8
 import sys
-sys.path.append('..')
-from time_layers import *
-from base_model import BaseModel
+sys.path.append('C:/Users/KimDongyoung/Desktop/Github/my_git/mygit/DEEPLEARNING/밑바닥부터시작하는딥러닝2')
+from common.time_layers import *
+from common.base_model import BaseModel
 
 
 class Encoder:
