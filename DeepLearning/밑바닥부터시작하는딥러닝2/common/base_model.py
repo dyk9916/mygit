@@ -6,6 +6,8 @@ import pickle
 import numpy as np
 from util import to_gpu, to_cpu
 
+GPU = False
+
 class BaseModel:
     def __init__(self):
         self.params, self.grads = None, None

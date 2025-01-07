@@ -1,7 +1,7 @@
 # coding: utf-8
 import numpy as np
-#from common.config import GPU
-from functions import softmax, cross_entropy_error
+from common.config import GPU
+from common.functions import softmax, cross_entropy_error
 
 
 class MatMul:

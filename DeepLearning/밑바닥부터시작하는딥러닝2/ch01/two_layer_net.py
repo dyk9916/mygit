@@ -1,8 +1,8 @@
 # coding: utf-8
 import sys
-sys.path.append('..')  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
+sys.path.append('C:/Users/KimDongyoung/Desktop/Github/my_git/mygit/DEEPLEARNING/밑바닥부터시작하는딥러닝2')  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
 import numpy as np
-from layers import Affine, Sigmoid, SoftmaxWithLoss
+from common.layers import Affine, Sigmoid, SoftmaxWithLoss
 
 
 class TwoLayerNet:
