@@ -1,7 +1,7 @@
 # coding: utf-8
 import sys
 import os
-sys.path.append('..')
+sys.path.append('C:/Users/KimDongyoung/Desktop/Github/my_git/mygit/DEEPLEARNING/밑바닥부터시작하는딥러닝2')
 try:
     import urllib.request
 except ImportError:
