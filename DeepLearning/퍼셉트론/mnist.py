@@ -117,7 +117,7 @@ def load_mnist(normalize=True, flatten=True, one_hot_label=False):
     if normalize:
         for key in ('train_img', 'test_img'):
             dataset[key] = dataset[key].astype(np.float32)
-            dataset[key] /= 255.0
+            dataset[key] /= 255.0 # 픽셀 값을 255로 나누어서 0.0~1.0으로 정규화
 
     if one_hot_label:
         dataset['train_label'] = _change_one_hot_label(dataset['train_label'])
