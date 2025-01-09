@@ -39,6 +39,11 @@ class MultiLayerNet:
         for idx in range(1, self.hidden_layer_num+1):
             self.layers['Affine' + str(idx)] = Affine(self.params['W' + str(idx)],
                                                       self.params['b' + str(idx)])
+            
+            if self.use_batchnorm:
+                self.params['gamma' + str(idx)] = np.ones(hidden_size_list[idx-1])
+                self.params['beta' + str(idx)] = np.zeros(hidden_size_list[idx-1])
+                self.layers['BatchNorm' + str(idx)] = BatchNormalization(self.params['gamma' + str(idx)], self.params['beta' + str(idx)])
             self.layers['Activation_function' + str(idx)] = activation_layer[activation]()
 
         idx = self.hidden_layer_num + 1
