@@ -41,8 +41,8 @@ class Trainer:
         x_batch = self.x_train[batch_mask]
         t_batch = self.t_train[batch_mask]
         
-        grads = self.network.gradient(x_batch, t_batch)
-        self.optimizer.update(self.network.params, grads)
+        grads = self.network.gradient(x_batch, t_batch)   # 각 계층에서의 가중치, 편향에 대한 gradient를 구함
+        self.optimizer.update(self.network.params, grads) # grads를 넘겨줌으로써 params를 업데이트
         
         loss = self.network.loss(x_batch, t_batch)
         self.train_loss_list.append(loss)

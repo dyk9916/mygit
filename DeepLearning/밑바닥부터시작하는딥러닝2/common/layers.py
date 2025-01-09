@@ -139,7 +139,7 @@ class Dropout:
 
     def forward(self, x, train_flg=True):
         if train_flg:
-            self.mask = np.random.rand(*x.shape) > self.dropout_ratio
+            self.mask = np.random.rand(*x.shape) > self.dropout_ratio # x와 형상이 같은 배열을 무작위로 생성, dropout_ratio보다 큰 원소만 활성화 (True)
             return x * self.mask
         else:
             return x * (1.0 - self.dropout_ratio)
