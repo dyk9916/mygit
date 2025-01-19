@@ -163,5 +163,5 @@ class Embedding:
     def backward(self, dout):
         dW, = self.grads
         dW[...] = 0
-        np.add.at(dW, self.idx, dout)
+        np.add.at(dW, self.idx, dout) # dW의 self.idx번째 행에 dout을 더함
         return None
