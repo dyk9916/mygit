@@ -118,23 +118,40 @@ class RnnlmTrainer:
                 loss_count += 1
 
                 # 퍼플렉서티 평가
-                if (eval_interval is not None) and (iters % eval_interval) == 0:
-                    ppl = np.exp(total_loss / loss_count)
-                    elapsed_time = time.time() - start_time
-                    print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 퍼플렉서티 %.2f'
-                          % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, ppl))
-                    self.ppl_list.append(float(ppl))
+                # if (eval_interval is not None) and (iters % eval_interval) == 0:
+                #     ppl = np.exp(total_loss / loss_count)
+                #     elapsed_time = time.time() - start_time
+                #     print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 퍼플렉서티 %.2f'
+                #           % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, ppl))
+                #     self.ppl_list.append(float(ppl))
+                #     total_loss, loss_count = 0, 0
+
+            # self.current_epoch += 1
+            
+                if (iters + 1) % eval_interval == 0:
+                    avg_loss = total_loss / loss_count
+                    ppl = np.exp(avg_loss)
+                    self.ppl_list.append(ppl)
+                    self.epoch_list.append(epoch + (iters + 1) / max_iters)
                     total_loss, loss_count = 0, 0
 
-            self.current_epoch += 1
-
+    # def plot(self, ylim=None):
+    #     x = numpy.arange(len(self.ppl_list))
+    #     if ylim is not None:
+    #         plt.ylim(*ylim)
+    #     plt.plot(x, self.ppl_list, label='train')
+    #     plt.xlabel('반복 (x' + str(self.eval_interval) + ')')
+    #     plt.ylabel('퍼플렉서티')
+    #     plt.show()
+    
     def plot(self, ylim=None):
-        x = numpy.arange(len(self.ppl_list))
+        x = np.array(self.epoch_list)
         if ylim is not None:
             plt.ylim(*ylim)
         plt.plot(x, self.ppl_list, label='train')
-        plt.xlabel('반복 (x' + str(self.eval_interval) + ')')
+        plt.xlabel('에폭')
         plt.ylabel('퍼플렉서티')
+        plt.legend()
         plt.show()
 
 
