@@ -19,7 +19,7 @@ def _update_vocab(txt):
             id_to_char[tmp_id] = char
 
 
-def load_data(file_name='addition.txt', seed=1984):
+def load_data(file_name='addition.txt', seed=1984): # addition.txt는 덧셈 연산 문제 데이터셋
     file_path = os.path.dirname(os.path.abspath(__file__)) + '/' + file_name
 
     if not os.path.exists(file_path):
