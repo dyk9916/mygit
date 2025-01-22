@@ -2,7 +2,7 @@
 import sys
 sys.path.append('C:/Users/KimDongyoung/Desktop/Github/my_git/mygit/DEEPLEARNING/밑바닥부터시작하는딥러닝2')
 from common.time_layers import *
-from seq2seq import Encoder, Seq2seq
+from ch07.seq2seq import Encoder, Seq2seq
 from ch08.attention_layer import TimeAttention
 
 

@@ -2,7 +2,7 @@
 import sys
 sys.path.append('..')
 import numpy as np
-from layers import Softmax
+from common.layers import Softmax
 
 
 class WeightSum:
