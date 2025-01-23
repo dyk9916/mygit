@@ -16,7 +16,7 @@ class Trainer:
         self.eval_interval = None
         self.current_epoch = 0
 
-    def fit(self, x, t, max_epoch=10, batch_size=32, max_grad=None, eval_interval=20): # x: 입력 데이터, t: 입력 데이터에 대응하는 정답 레이블
+    def fit(self, x, t, max_epoch=10, batch_size=32, max_grad=None, eval_interval=20):
         data_size = len(x)
         max_iters = data_size // batch_size
         self.eval_interval = eval_interval
@@ -25,30 +25,29 @@ class Trainer:
         loss_count = 0
 
         start_time = time.time()
-        # epoch 수 만큼 반복
         for epoch in range(max_epoch):
             # 뒤섞기
             idx = numpy.random.permutation(numpy.arange(data_size))
             x = x[idx]
             t = t[idx]
-            # batch_size 단위로 데이터를 읽어가며 학습
+
             for iters in range(max_iters):
-                batch_x = x[iters*batch_size:(iters+1)*batch_size] # batch_size만큼 데이터를 뽑아냄
-                batch_t = t[iters*batch_size:(iters+1)*batch_size] # batch_size만큼 데이터를 뽑아냄
+                batch_x = x[iters*batch_size:(iters+1)*batch_size]
+                batch_t = t[iters*batch_size:(iters+1)*batch_size]
 
                 # 기울기 구해 매개변수 갱신
-                loss = model.forward(batch_x, batch_t) # 모델의 forward 메서드 호출하여 손실 계산
-                model.backward()                       # 모델의 backward 메서드 호출하여 기울기 계산
+                loss = model.forward(batch_x, batch_t)
+                model.backward()
                 params, grads = remove_duplicate(model.params, model.grads)  # 공유된 가중치를 하나로 모음
                 if max_grad is not None:
                     clip_grads(grads, max_grad)
-                optimizer.update(params, grads) # 기울기(grads)를 활용해 가중치(params) 갱신
+                optimizer.update(params, grads)
                 total_loss += loss
                 loss_count += 1
 
                 # 평가
                 if (eval_interval is not None) and (iters % eval_interval) == 0:
-                    avg_loss = total_loss / loss_count  # 평균 손실 계산
+                    avg_loss = total_loss / loss_count
                     elapsed_time = time.time() - start_time
                     print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 손실 %.2f'
                           % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, avg_loss))
@@ -62,8 +61,8 @@ class Trainer:
         if ylim is not None:
             plt.ylim(*ylim)
         plt.plot(x, self.loss_list, label='train')
-        plt.xlabel('iterations (x' + str(self.eval_interval) + ')')
-        plt.ylabel('loss')
+        plt.xlabel('반복 (x' + str(self.eval_interval) + ')')
+        plt.ylabel('손실')
         plt.show()
 
 
@@ -118,40 +117,23 @@ class RnnlmTrainer:
                 loss_count += 1
 
                 # 퍼플렉서티 평가
-                # if (eval_interval is not None) and (iters % eval_interval) == 0:
-                #     ppl = np.exp(total_loss / loss_count)
-                #     elapsed_time = time.time() - start_time
-                #     print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 퍼플렉서티 %.2f'
-                #           % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, ppl))
-                #     self.ppl_list.append(float(ppl))
-                #     total_loss, loss_count = 0, 0
-
-            # self.current_epoch += 1
-            
-                if (iters + 1) % eval_interval == 0:
-                    avg_loss = total_loss / loss_count
-                    ppl = np.exp(avg_loss)
-                    self.ppl_list.append(ppl)
-                    self.epoch_list.append(epoch + (iters + 1) / max_iters)
+                if (eval_interval is not None) and (iters % eval_interval) == 0:
+                    ppl = np.exp(total_loss / loss_count)
+                    elapsed_time = time.time() - start_time
+                    print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 퍼플렉서티 %.2f'
+                          % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, ppl))
+                    self.ppl_list.append(float(ppl))
                     total_loss, loss_count = 0, 0
 
-    # def plot(self, ylim=None):
-    #     x = numpy.arange(len(self.ppl_list))
-    #     if ylim is not None:
-    #         plt.ylim(*ylim)
-    #     plt.plot(x, self.ppl_list, label='train')
-    #     plt.xlabel('반복 (x' + str(self.eval_interval) + ')')
-    #     plt.ylabel('퍼플렉서티')
-    #     plt.show()
-    
+            self.current_epoch += 1
+
     def plot(self, ylim=None):
-        x = np.array(self.epoch_list)
+        x = numpy.arange(len(self.ppl_list))
         if ylim is not None:
             plt.ylim(*ylim)
         plt.plot(x, self.ppl_list, label='train')
-        plt.xlabel('에폭')
+        plt.xlabel('반복 (x' + str(self.eval_interval) + ')')
         plt.ylabel('퍼플렉서티')
-        plt.legend()
         plt.show()
 
 
