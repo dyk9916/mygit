@@ -133,8 +133,8 @@ class RnnlmTrainer:
         if ylim is not None:
             plt.ylim(*ylim)
         plt.plot(x, self.ppl_list, label='train')
-        plt.xlabel('반복 (x' + str(self.eval_interval) + ')')
-        plt.ylabel('퍼플렉서티')
+        plt.xlabel('Iteration (x' + str(self.eval_interval) + ')')
+        plt.ylabel('Perplexity')
         plt.show()
 
 
