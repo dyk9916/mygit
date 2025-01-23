@@ -74,6 +74,7 @@ class RnnlmTrainer:
         self.ppl_list = None
         self.eval_interval = None
         self.current_epoch = 0
+        self.epoch_list = []  # epoch_list 초기화
 
     def get_batch(self, x, t, batch_size, time_size):
         batch_x = np.empty((batch_size, time_size), dtype='i')
