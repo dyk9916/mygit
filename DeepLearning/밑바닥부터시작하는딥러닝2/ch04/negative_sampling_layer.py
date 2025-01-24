@@ -5,6 +5,8 @@ import numpy as np
 from common.layers import Embedding, SigmoidWithLoss
 import collections
 
+# GPU 변수를 정의합니다.
+GPU = False  # GPU를 사용하지 않으려면 False로 설정, 사용하려면 True로 설정
 
 class EmbeddingDot:
     def __init__(self, W):
