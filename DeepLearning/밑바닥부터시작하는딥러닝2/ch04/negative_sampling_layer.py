@@ -1,7 +1,7 @@
 # coding: utf-8
 import sys
-sys.path.append('..')
-from common.np import *  # import numpy as np
+sys.path.append('C:/Users/KimDongyoung/Desktop/Github/my_git/mygit/DEEPLEARNING/밑바닥부터시작하는딥러닝2')
+import numpy as np
 from common.layers import Embedding, SigmoidWithLoss
 import collections
 
