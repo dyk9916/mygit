@@ -23,7 +23,11 @@ def extract_stats(soup):
     return stats
 
 def crawl():
+    # 전체 리스트에서 한 명만 추출
     usernames = get_usernames()
+    usernames = usernames[:1] # 예시로 첫 번째 사용자만 크롤링
+    print("사용할 usernames:", usernames)
+
     result_df = pd.DataFrame(columns=["username", "avg_views", "avg_comments", "video_promotions"])
 
     with sync_playwright() as p:
