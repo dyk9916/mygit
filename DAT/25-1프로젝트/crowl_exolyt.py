@@ -9,26 +9,26 @@ def get_usernames():
     return df['Username'].dropna().apply(lambda x: x.lstrip('@')).tolist()
 
 def extract_stats(soup):
-    stats = {"Avg. Views": None, "Avg. Comments": None, "Total Video Shares": None}
-    for div in soup.find_all("div"):
-        text = div.get_text(strip=True)
-        for label in stats:
-            if label in text:
-                parent = div.find_parent()
-                if parent:
-                    nums = parent.find_all("div")
-                    for n in nums:
-                        if n != div and any(c.isdigit() for c in n.get_text()):
-                            stats[label] = n.get_text(strip=True)
+    stats = {"Likes": None}
+    label_map = {
+        "Likes": "Likes"
+    }
+
+    for key, label in label_map.items():
+        label_div = soup.find("div", string=lambda text: text and label.lower() in text.lower())
+        if label_div:
+            value_div = label_div.find_next_sibling("div")
+            if value_div:
+                stats[key] = value_div.get_text(strip=True)
+
     return stats
 
 def crawl():
-    # 전체 리스트에서 한 명만 추출
     usernames = get_usernames()
-    usernames = usernames[:1] # 예시로 첫 번째 사용자만 크롤링
+    usernames = usernames[:1]  # 첫 번째 사용자만 크롤링
     print("사용할 usernames:", usernames)
 
-    result_df = pd.DataFrame(columns=["username", "avg_views", "avg_comments", "video_promotions"])
+    result_df = pd.DataFrame(columns=["username", "Likes"])
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -45,9 +45,7 @@ def crawl():
                 stats = extract_stats(soup)
                 result_df = pd.concat([result_df, pd.DataFrame([{
                     "username": username,
-                    "avg_views": stats["Avg. Views"],
-                    "avg_comments": stats["Avg. Comments"],
-                    "video_promotions": stats["Total Video Shares"]
+                    "Likes": stats["Likes"]
                 }])], ignore_index=True)
 
                 print(f"✅ {username} - 수집 성공")
