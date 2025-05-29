@@ -20,3 +20,4 @@ with sync_playwright() as p:
 # Ctrl + Shift + P → Python: Select Interpreter (3.12.6 64bit 선택)
 # 터미널에 cd Desktop/
 # 이후 터미널에 python examle.py
+
